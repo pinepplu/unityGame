@@ -1386,6 +1386,7 @@ MonoBehaviour:
   moveVertical: 0
   speed: 10
   isFacingRight: 1
+  animator: {fileID: 0}
 --- !u!114 &730865705
 MonoBehaviour:
   m_ObjectHideFlags: 0

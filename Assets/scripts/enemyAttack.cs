@@ -10,7 +10,7 @@ public class enemyAttack : MonoBehaviour
     void Start()
     {
         //random shooting
-        spawnTime = Random.Range(.01f, 1f);
+        spawnTime = Random.Range(.01f, .7f);
     }
 
     // Update is called once per frame
@@ -19,6 +19,6 @@ public class enemyAttack : MonoBehaviour
         spawnTime -= Time.deltaTime;
         if(spawnTime <= 0)
         Instantiate(fireball, transform.position, Quaternion.identity);
-        spawnTime = Random.Range(.01f, 1f);
+        spawnTime = Random.Range(.01f, .7f);
     }
 }

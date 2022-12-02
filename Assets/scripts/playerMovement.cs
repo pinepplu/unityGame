@@ -9,12 +9,23 @@ public class playerMovement : MonoBehaviour
     [SerializeField] float moveVertical;
 	[SerializeField] int speed = 10;
 	[SerializeField] bool isFacingRight = true;
+	/*[SerializeField] Animator animator;
+	const int idle = 0;
+    const int roll = 1;
+    const int fly = 2;
+	*/
 
     // Start is called before the first frame update
     void Start()
     {
 		if (rigid == null)
 			rigid = GetComponent<Rigidbody2D>();
+		/*
+		if (animator == null)
+            animator = GetComponent<Animator>();
+			
+		animator.SetInteger("motion", idle);
+		*/
     }
 
     // Update is called once per frame
@@ -30,6 +41,11 @@ public class playerMovement : MonoBehaviour
     void FixedUpdate()
 	{
 		rigid.velocity = new Vector2(moveHorizontal * speed, moveVertical * speed);
+		/*if (moveHorizontal > 0 || moveHorizontal < 0)
+                animator.SetInteger("motion", roll);
+            else
+                animator.SetInteger("motion", idle);
+			*/
 		if ((moveHorizontal > 0 && isFacingRight) || (moveHorizontal < 0 && !isFacingRight))
 			Flip();
 	}
